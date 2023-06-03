@@ -2,7 +2,7 @@
 import hashlib, random, string
 
 def gener_string():
-    str = ''.join(random.choices(string.ascii_letters, k=6))
+    str = ''.join(random.choices(string.ascii_letters, k=8))
 
     return str
 
