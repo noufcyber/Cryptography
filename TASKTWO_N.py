@@ -1,5 +1,5 @@
 
-import hashlib, random, string
+import hashlib, random, string, time
 
 def gener_string():
     str = ''.join(random.choices(string.ascii_letters, k=8))
@@ -20,12 +20,16 @@ def f_collision():
             return txt, txt_h
         hash_values.add(txt_h)
 
+start = time.time()
 t_return, h_return = f_collision()
 t_return_2 = ""
 while gener_sha60v(t_return_2) != h_return:
     t_return_2 = gener_string()
+end = time.time()
+execution_time = end - start
 
 print("There is a Collision !!!")
 print("Message ->", t_return)
 print("Collision -> ", t_return_2)
 print("Hash -> ", h_return)
+print(f"executed in {execution_time} seconds ")
